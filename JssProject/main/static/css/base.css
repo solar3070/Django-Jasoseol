@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'locus_sangsang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/locus_sangsang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+                       
+body {
+    margin: 0;
+    font-family: 'locus_sangsang';
+}
+
+button {
+    font-family: 'locus_sangsang';
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: black;
+}
+
+.plus_btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.top, .bottom {
+    text-align: center;
+    background-color: #E6E6E6;
+    height: 5rem;
+    display: table;
+    width: 100%;
+}
+
+h1, .bottom p {
+    margin: 0;
+    display: table-cell;
+    vertical-align:middle;
+    letter-spacing: 2px;
+}
+
+
+

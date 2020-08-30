@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}{% static 'css/index.css' %}{% endblock %}
+
+{% block content %}
+<div class="aside">
+
+    <div class="login">
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">
+            <button>로그아웃</button>
+        </a>
+        안녕하세요, {{user}}님!
+        {% else %}
+        <a href="{% url 'signup' %}">
+            <button>회원가입</button>
+        </a>
+        <a href="{% url 'login' %}">
+            <button>로그인</button>
+        </a>
+        {% endif %}
+    </div>
+    <br>
+
+    <div class="make_jss">
+        <a class="plus_btn" href="{% url 'create' %}">+</a>
+        <p>자기소개서 작성</p>
+    </div>
+    <br>
+
+    <div class="filter">
+        {% if user.is_authenticated %}
+        <a href="{% url 'my_index' %}">
+            <button>내 자기소개서만 보기</button>
+        </a>
+        <a href="{% url 'index' %}">
+            <button>모든 자기소개서 보기</button>
+        </a>
+        {% endif %}
+        <br>
+    </div>
+
+</div>
+
+<div class="content">
+
+    <div class="post">
+        {% for jss in posts %}
+        <a href="{% url 'detail' jss.id %}">
+            <div class="all_jss">
+                <p>작성자<br>{{jss.author}}</p>
+                <p>제목<br>{{jss.title}}</p>
+                <p>내용<br>{{jss.summary}}..</p>
+                <p>{{jss.updated_at|date:"Y-m-d"}}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    <br>
+
+    <div class="pagination">
+        {%if posts.has_previous%}
+        <a href="?page={{posts.previous_page_number}}">< 이전</a>
+        {%endif%}
+
+        <span>{{posts.number}}</span>
+        <span>/</span>
+        <span>{{posts.paginator.num_pages}}</span>
+                
+        {%if posts.has_next%}
+        <a href="?page={{posts.paginator.num_pages}}">다음 ></a>
+        {%endif%}
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+.post {
+    text-align: center;
+    width: 500px;
+    height: auto;
+    margin: 50px auto;
+}
+
+.com, p {
+    text-align: center;
+    margin-top: 10px;
+}

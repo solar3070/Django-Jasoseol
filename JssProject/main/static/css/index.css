@@ -1,0 +1,58 @@
+.make_jss, .all_jss {
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.all_jss {
+    display: inline-flex;
+    margin-right: 22px;
+}
+
+p {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+div {
+    float: left;
+}
+
+.aside {
+    width: 19%;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.content {
+    width: 59%;
+    border-left: 30px solid #E6E6E6;
+    padding: 120px 87px;
+    word-break: break-all;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination a:link, .pagination a:visited, .plus_btn:link, .plus_btn:visited{
+    color: grey;
+}
+
+.pagination a:hover, .plus_btn:hover {
+    opacity: 0.5;
+}
+
+.all_jss:hover {
+    background-color:#f1f1f1;
+}
