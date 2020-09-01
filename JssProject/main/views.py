@@ -15,7 +15,10 @@ def index(request):
 
 def my_index(request):
     my_jss = Jasoseol.objects.filter(author=request.user)
-    return render(request, 'index.html', {'all_jss':my_jss})
+    paginator = Paginator(my_jss, 4)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
+    return render(request, 'index.html', {'posts':posts})
 
 @login_required(login_url='/login/')
 def create(request):

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'tem.html' %}
 {% load static %}
 
 {% block link %}{% static 'css/index.css' %}{% endblock %}
@@ -62,13 +62,11 @@
     <div class="pagination">
         {%if posts.has_previous%}
         <a href="?page={{posts.previous_page_number}}">< 이전</a>
+        <span>{{posts.number}} / {{posts.paginator.num_pages}}</span>
         {%endif%}
 
-        <span>{{posts.number}}</span>
-        <span>/</span>
-        <span>{{posts.paginator.num_pages}}</span>
-                
         {%if posts.has_next%}
+        <span>{{posts.number}} / {{posts.paginator.num_pages}}</span>
         <a href="?page={{posts.paginator.num_pages}}">다음 ></a>
         {%endif%}
     </div>
